@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./src/style.css">
+<title>Chirico</title>
+</head>
+<body>
+     <!-- Cabeçalho da Página-->
+     <header>
+
+        <!-- Logo -->
+        <a href="#" class="logo">Unions<span>TEC</span></a>
+
+        <ul class="navlist">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Sobre">Sobre</a></li>
+            <li><a href="#Servicos">Servicos</a></li>
+            <li><a href="#Porfifolio">Portifolio</a></li>
+            <li><a href="#Contacto">Contacto</a></li>
+        </ul>
+        <div>
+            <a href="#"class="h-btn">Vamos conversar</a>
+        </div>
+    </header>
+
+  
+    <!--Home-->
+   <section class="hero" id="home">
+    <div class="main-content">
+        <h4> Ola,todos...</h4>
+        <h1>Eu sou,<span> Manuel chirico</span></h1>
+        <p> 
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Error laudantium quas mollitia exercitationem? Accusamus, a mollitia ut architecto, dignissimos corporis quaerat, nulla laudantium inventore hic soluta. Quisquam perferendis odit necessitatibus?
+        </p>
+ 
+
+        <div class="social">
+            <a href="#"> <img src="./imagens/icons8-facebook-24.png"> </a>
+            <a href="#"> <img src="./imagens/icons8-linkedin-24.png"> </a>
+            <a href="#"> <img src="./imagens/icons8-twitter-24.png"> </a>
+        </div>
+
+        <div class="main-btn">
+            <a href="#" class="btn">Contacte</a>
+            <a href="#" class="btn btn2">baixar CV</a>
+
+        </div>
+   </div>
+
+    </section>
+    
+
+   <!-- Sobre -->
+   <section class="sobre" id="Sobre">
+    <div class="sobre-content">
+        <h2>Sobre Mim</h2>
+        <p>
+            Eu sou Manuel chirico,estudante da universidade licungo 4ano minor de desenvolvimento de sistema,cadeira de fundamentos de html5 ,lecionado pelo MSC Egas Lemos, sou  desenvolvedor apaixonado por criar soluções inovadoras. 
+            Com experiência em várias tecnologias e ferramentas, meu objetivo é ajudar 
+            empresas e indivíduos a realizarem seus projetos de forma eficiente e profissional.
+        </p>
+        <p>
+            Acredito na força da tecnologia para transformar ideias em realidade e estou sempre em busca 
+            de novos desafios para me aprimorar e contribuir com o mundo digital.
+        </p>
+        <div class="skills">
+            <h3>Minhas Habilidades</h3>
+            <ul>
+                <li>Desenvolvimento Web</li>
+                <li>Design Responsivo</li>
+                <li>JavaScript e PHP</li>
+                <li>Banco de Dados</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+
+   <!-- Serviços -->
+   <section class="servicos" id="Servicos">
+    <div class="servicos-content">
+        <h2>Serviços</h2>
+        <div class="servico-list">
+            <div class="servico-item" id="cctv">
+                <img src="./imagens/cctv.jpeg" alt="CCTV">
+                <h3>CCTV</h3>
+                <p class="info">Sistema de Câmeras de Vigilância</p>
+            </div>
+            <div class="servico-item" id="websites">
+                <img src="./imagens/websites.jpeg" alt="Websites">
+                <h3>Websites</h3>
+                <p class="info">Desenvolvimento de Websites</p>
+            </div>
+            <div class="servico-item" id="vendas">
+                <img src="./imagens/vendas.jpeg" alt="Vendas">
+                <h3>Vendas</h3>
+                <p class="info">Soluções de Vendas Online</p>
+            </div>
+            <div class="servico-item" id="redes">
+                <img src="./imagens/redes.jpeg" alt="Redes">
+                <h3>Redes</h3>
+                <p class="info">Configuração de Redes</p>
+            </div>
+        </div>
+        <div class="servico-details" id="servico-details">
+            <h3>Detalhes do Serviço</h3>
+            <p id="details-text">Clique em um serviço para ver mais informações.</p>
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+
+
+<script>
+    document.querySelectorAll('.servico-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const id = this.id;
+            const detailsText = {
+                cctv: 'Sistema de Câmeras de Vigilância: Solução completa para monitoramento e segurança.',
+                websites: 'Desenvolvimento de Websites: Criação de sites responsivos e funcionais.',
+                vendas: 'Soluções de Vendas Online: Estratégias e ferramentas para aumentar suas vendas.',
+                redes: 'Configuração de Redes: Instalação e configuração de redes para empresas e residências.'
+            };
+            
+            document.getElementById('details-text').innerText = detailsText[id];
+            document.getElementById('servico-details').classList.add('active');
+        });
+    });
+
+    document.getElementById('servico-details').addEventListener('click', function() {
+        this.classList.remove('active');
+    });
+</script>
+
+</html>
+
+
