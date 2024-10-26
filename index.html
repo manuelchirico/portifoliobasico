@@ -43,19 +43,29 @@
        </div>
     </section>
 
-    <!-- Sobre -->
     <section class="sobre" id="Sobre">
         <div class="sobre-content">
             <h2>Sobre Mim</h2>
             <p>Eu sou Manuel Chirico, estudante da Universidade Licungo, 4º ano em desenvolvimento de sistemas. Sou um desenvolvedor apaixonado por criar soluções inovadoras com experiência em várias tecnologias e ferramentas.</p>
+
+            <!-- Minhas Habilidades com Cards -->
             <div class="skills">
-                <h3>Minhas Habilidades</h3>
-                <ul>
-                    <li>Desenvolvimento Web</li>
-                    <li>Design Responsivo</li>
-                    <li>JavaScript e PHP</li>
-                    <li>Banco de Dados</li>
-                </ul>
+                <div class="skill-card" id="card-desenvolvimento">
+                    <img src="./imagens/desenvolvimento_web.jpg" alt="Desenvolvimento Web">
+                    <h4>Desenvolvimento Web</h4>
+                </div>
+                <div class="skill-card" id="card-responsive">
+                    <img src="./imagens/responsive.jpeg" alt="Design Responsivo">
+                    <h4>Design Responsivo</h4>
+                </div>
+                <div class="skill-card" id="card-js-php">
+                    <img src="./imagens/js.png" alt="JavaScript e PHP">
+                    <h4>JavaScript e PHP</h4>
+                </div>
+                <div class="skill-card" id="card-banco">
+                    <img src="./imagens/banco.jpeg" alt="Banco de Dados">
+                    <h4>Banco de Dados</h4>
+                </div>
             </div>
         </div>
     </section>
@@ -90,6 +100,30 @@
     </section>
 
 <script>
+
+const images = {
+            "card-desenvolvimento": ["./imagens/desenvolvimento_web.jpg", "./imagens/desenvolvimento_web_alternativa.jpg"],
+            "card-responsive": ["./imagens/responsive.jpeg", "./imagens/responsive_alternativa.jpg"],
+            "card-js-php": ["./imagens/js.png", "./imagens/js_alternativa.png"],
+            "card-banco": ["./imagens/banco.jpeg", "./imagens/banco_alternativa.jpeg"]
+        };
+
+        function changeImages() {
+            Object.keys(images).forEach(cardId => {
+                const card = document.getElementById(cardId);
+                const img = card.querySelector('img');
+                const currentImage = img.src;
+                const newImage = images[cardId].find(src => !currentImage.includes(src));
+                img.src = newImage;
+            });
+        }
+
+        setInterval(changeImages, 5000);
+
+
+
+
+
     // Efeito de digitação
  // Efeito de digitação constante
  const text = "Manuel Chirico";
