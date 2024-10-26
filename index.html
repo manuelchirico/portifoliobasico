@@ -99,6 +99,19 @@
         </div>
     </section>
 
+    <!-- Seção de Contato -->
+    <section class="contato" id="Contacto" style="display: none;">
+        <div class="contato-content">
+            <h2>Contato</h2>
+            <div class="contato-info">
+                <p><i class="fas fa-user"></i> Nome: Manuel Chirico</p>
+                <p><i class="fas fa-envelope"></i> Email: manuelchirico@gmail.com</p>
+                <p><i class="fas fa-phone"></i> Telefone: 846100952</p>
+                <p><i class="fas fa-map-marker-alt"></i> Endereço: Manga Mascarenha</p>
+            </div>
+        </div>
+    </section>
+
 <script>
 
 const images = {
@@ -171,6 +184,12 @@ const images = {
     document.getElementById('servico-details').addEventListener('click', function() {
         this.classList.remove('active');
     });
+
+    // Mostrar seção de contato
+    function showContactSection() {
+        document.getElementById("Contacto").style.display = "block";
+        window.scrollTo(0, document.getElementById("Contacto").offsetTop);
+    }
 </script>
 </body>
 </html>
